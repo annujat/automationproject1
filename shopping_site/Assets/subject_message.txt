@@ -1,0 +1,7 @@
+subject- an error occured while logging out
+
+sir,i am practicing your site for automation
+ i got testcase to contact you . thats why i am writting this.this msg
+ while i try to logout, i cick on the logout button and get a message on a different screen
+there is no element found with this name.
+resolve this
