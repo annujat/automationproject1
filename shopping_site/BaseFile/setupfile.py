@@ -6,13 +6,13 @@ from Library import ConfigParser
 @pytest.fixture(scope="function")
 def setup(request):
     global driver
-    browser = ConfigParser.parse_driver("Name", "driver")
+    browser = ConfigParser.parse_driver("Name", "chromedriver")
     if browser == "chrome":
         ser = webdriver.ChromeService(executable_path=ConfigParser.parse_driver("Drivers", "chrome"))
         opt = webdriver.ChromeOptions()
         driver = webdriver.Chrome(service=ser, options=opt)
     elif browser == "firefox":
-        ser = webdriver.FirefoxService(executable_path=ConfigParser.parse_driver("Drivers", "chrome"))
+        ser = webdriver.FirefoxService(executable_path=ConfigParser.parse_driver("Drivers", "firefox"))
         opt = webdriver.FirefoxOptions()
         opt.binary_location = "C:\\Program Files\\Mozilla Firefox\\firefox.exe"
         driver = webdriver.Firefox(options=opt, service=ser)
