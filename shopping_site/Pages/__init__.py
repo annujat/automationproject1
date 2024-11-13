@@ -6,3 +6,4 @@ from . import products_detail_paige
 from . import subscribers_page
 from . import contact_page
 from . import base
+from . import checkout_page
