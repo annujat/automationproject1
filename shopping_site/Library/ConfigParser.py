@@ -13,3 +13,8 @@ def parse_details(section, key):
     parse.read(".\\ConfigFile\\details.cfg")
     return parse.get(section, key)
 
+
+def parse_payment_card(section, key):
+    parse = configparser.ConfigParser()
+    parse.read(".\\ConfigFile\\payment_card.cfg")
+    return parse.get(section, key)

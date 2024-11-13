@@ -85,7 +85,8 @@ class Test_Subscription:
 
 @pytest.mark.cart
 @pytest.mark.usefixtures("setup")
-class Test_Cart:
+class Test_cart:
+
     def test_add_to_cart(self):
         ad = Pages.cart_page.add_to_cart(self.driver)
         ad.check_add_to_cart()
@@ -95,3 +96,17 @@ class Test_Cart:
         qua = Pages.cart_page.product_quantity(self.driver)
         qua.check_view_product()
         qua.check_in_cart()
+
+
+@pytest.mark.order
+@pytest.mark.usefixtures("setup")
+class Test_checkout:
+
+    def test_login(self):
+        lg = Pages.checkout_page.Checkout(self.driver)
+        lg.check_logging_in()
+        lg.check_add_to_cart()
+        lg.check_cart()
+        lg.check_checkout()
+        lg.fill_payment_details()
+        lg.place_order()

@@ -4,6 +4,10 @@ def text_data(part):
         data.seek(9)
         subject = data.readline()
         return subject
-    else:
+    elif part == "message":
         data.seek(47)
+        return data.read()
+
+    else :
+        data.seek(80)
         return data.read()

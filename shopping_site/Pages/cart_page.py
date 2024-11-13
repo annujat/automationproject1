@@ -23,12 +23,14 @@ class add_to_cart:
         wait = WebDriverWait(self.driver, 10)
         wait.until(expected_conditions.visibility_of(
             self.driver.find_element("xpath", "//button[contains(text(),'Continue Shopping')]")))
+        time.sleep(1)
         self.driver.find_element("xpath", "//button[contains(text(),'Continue Shopping')]").click()
         print("clicked on continue shopping")
         act.move_to_element(self.driver.find_element("xpath", "//a[@data-product-id='2']")).perform()
         act.click().perform()
         wait.until(expected_conditions.visibility_of(
             self.driver.find_element("xpath", "//u[contains(text(),'View Cart')]")))
+        time.sleep(1)
         act.click(self.driver.find_element("xpath", "//u[contains(text(),'View Cart')]")).perform()
         time.sleep(3)
 
